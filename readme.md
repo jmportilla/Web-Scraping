@@ -29,10 +29,10 @@ We will be using the NYT API to download articles from the web.  Eventually we w
 * [Regular expression tester](http://pythex.org/)
 * [Google Regex tutorial](https://developers.google.com/edu/python/regular-expressions)
 * [Beautiful Soup (HTML parsing and searching)](http://www.crummy.com/software/BeautifulSoup/)
-* MongoDB Python driver](http://api.mongodb.org/python/current/tutorial.html)
+* [MongoDB Python driver](http://api.mongodb.org/python/current/tutorial.html)
 * [Fielding's Dissertation](http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
 * [List of common HTTP status codes](http://www.smartlabsoftware.com/ref/http-status-codes.htm)
-* [API client])(http://www.getpostman.com/)
+* [API client](http://www.getpostman.com/)
 
 ## Assignment
 
