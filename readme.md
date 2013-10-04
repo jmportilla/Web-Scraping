@@ -33,6 +33,7 @@ We will be using the NYT API to download articles from the web.  Eventually we w
 * [Fielding's Dissertation](http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
 * [List of common HTTP status codes](http://www.smartlabsoftware.com/ref/http-status-codes.htm)
 * [API client](http://www.getpostman.com/)
+* [What is a "protocol"?](http://thomaslevine.com/!/street-sign-protocol)
 
 ## Assignment
 
