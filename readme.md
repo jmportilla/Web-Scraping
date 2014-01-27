@@ -34,6 +34,7 @@ We will be using the NYT API to download articles from the web.  Eventually we w
 * [List of common HTTP status codes](http://www.smartlabsoftware.com/ref/http-status-codes.htm)
 * [API client](http://www.getpostman.com/)
 * [What is a "protocol"?](http://thomaslevine.com/!/street-sign-protocol)
+* [Web Scraping Tools](http://blog.marcua.net/post/74655674340)
 
 ## Assignment
 
