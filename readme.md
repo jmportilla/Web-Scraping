@@ -173,9 +173,9 @@ __wordlocation__
 | 2 | 1 | 1 | 12 |
 | ... | ...| ... | ...|
 
-__urls table: mapping of url => url_id__
+__urls table: mapping of (url => url_id)__
 
-__wordlist table: mapping word => word_id and position in feature vector__
+__wordlist table: mapping of (word => word_id, position/index) in feature vector__
 
 __wordlocation table: connect words => urls. (location is position of word in article, i.e. "dog" is the 12th word in "http://nyt.com/hotdogs_in_the_park...")__
 
