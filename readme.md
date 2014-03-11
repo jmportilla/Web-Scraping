@@ -229,7 +229,6 @@ for each document:
 * [Text classification with NLTK and scikit-learn (slides)](http://www.slideshare.net/ogrisel/statistical-machine-learning-for-text-classification-with-scikitlearn-and-nltk)
 * [scikit-learn: Text Feature extraction](http://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction)
 * [Finding Important words with tf-idf](http://www.stevenloria.com/finding-important-words-in-a-document-using-tf-idf/)
-* [OG presentation on NLTK](http://www.slideshare.net/ogrisel/statistical-machine-learning-for-text-classification-with-scikitlearn-and-nltk)
 * [NLTK book](http://nltk.org/book/)
 * [Hashing language](http://blog.someben.com/2013/01/hashing-lang/)
 * [SQL examples](http://www.thegeekstuff.com/2012/09/sqlite-command-examples/)
