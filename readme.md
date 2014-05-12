@@ -34,11 +34,10 @@ We will be using the NYT API to download articles from the web.  Eventually we w
 ## Reading
 
 * [How does the internet work](http://docs.webplatform.org/wiki/concepts/internet_and_web/how_does_the_internet_work)
-
 * Data Science Rules: Web Scraping and HTML
    * [Part 1](http://datasciencerules.blogspot.com/2012/11/web-scraping-and-html-parsing.html)
    * [Part 2](http://datasciencerules.blogspot.com/2012/11/web-scraping-and-html-parsing-2.html)
-
+* [Mapping Relational Database concepts to MongoDB](http://code.tutsplus.com/articles/mapping-relational-databases-and-sql-to-mongodb--net-35650)
 ## Assignment
 
 ### Outline
