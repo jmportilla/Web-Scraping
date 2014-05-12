@@ -218,6 +218,7 @@ for each document:
 * [What is a "protocol"?](http://thomaslevine.com/!/street-sign-protocol)
 * [Web Scraping Tools](http://blog.marcua.net/post/74655674340)
 
+* [Visual Guide to NoSQL](http://blog.nahurst.com/visual-guide-to-nosql-systems)
 * __[Requests HTTP library](http://docs.python-requests.org/en/latest/)__
 * __[wget](http://www.gnu.org/software/wget/)__ is your friend. __[curl](http://curl.haxx.se/)__ is your homie. 
 * __[Regular expression tester](http://pythex.org/)__
