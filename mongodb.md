@@ -90,6 +90,7 @@ So now that we have data, we can begin querying! Oh, and mongo's shell has autoc
 ## Extra Credit
 
 MongoDB actually has some [geospatial][19] facilities (don't worry, Postgres has [even better][18] ones as well).  Using the geoindices and querying, answer the following:
+
 1. All clicks within 50 miles of San Francisco
 2. All clicks that came from [New England](http://en.wikipedia.org/wiki/New_England)
 
