@@ -7,6 +7,7 @@ In order to get used to mongoDB and it's quirks, we will play around with the mo
 Throughout this tutorial use these references/cheatsheets to speed up the transition from SQL:
 * [SQL -> MongoDB mapping][1]
 * [MongoDB Cheatsheet][2]
+* [MongoDB Reference Cards][22]
 
 ### Exercise
 
@@ -48,6 +49,8 @@ Using the following [guide][6] as a reference, begin exploring the database. Mon
 
 And __POOF__ it comes into existence (this also happens with collections)!
 
+#### Part 1
+
 1. What database are you currently connected to?
 2. What other databases are there?
 3. Create a new database called `clicks` for our click-stream data
@@ -60,13 +63,17 @@ Time for some fun... we will now begin to insert data into our database.  MongoD
 
 In order to get data into our database we will exploit one of the niceties of its flexibility and one of the __few__ reasons to use it over SQL.  MongoDB (being the schemaless database it is) can basically accept any data on the fly (as long as it is properly formed JSON, CSV, or TSV) and create a schema for it.
 
+#### Part 2
+
 1. Using [curl][7] on the commandline, connect to the government stream [data][11] and print it to STDOUT (the terminal). Use the `-s` flag to silence the status bar. 
     * Since it is a stream of data curl will keep the connection open.  Watch the data stream to your terminal STDOUT.
 2. Once you have it printing to the terminal, we can use UNIX [pipes][10] to pass the data to the [`mongoimport`][9] command.  For starters, pipe the result of the curl command to [`grep`][12] to filter the stream for clicks from NASA's site.  You need to use the `--no-buffer` flag for the command to output intermediate results.
 
 Now that we can get the JSON and have a handle on pipes, we are ready to put all the pieces together with `mongoimport`.  Things are about to get crazy, hold on to your seats...  Remember how we created a `clicks` database?  Well forget we ever did.
 
-1. Curl the government stream, pipe it to `mongoimport`, and import it into a database called `prism` in a collection called `bitly_clicks` (remember... no schemas, no masters). Collect data for 5 minutes or so. Remember at what time you began collecting data.
+### Part 3
+
+1. Curl the [government stream](http://dev.bitly.com/public_data.html)(1.USA,gov), pipe it to `mongoimport`, and import it into a database called `prism` in a collection called `bitly_clicks` (remember... no schemas, no masters). Collect data for 5 minutes or so. Remember at what time you began collecting data.
 2. Use the mongo shell (`mongo`) to connect to the database.
 3. Inspect your databases.  How many are there and what are their sizes?
 4. Inspect the collections, how much data did you collect in your `bitly_clicks` collection? Remember to use your help: 
@@ -78,13 +85,21 @@ Now that we can get the JSON and have a handle on pipes, we are ready to put all
 
 So now that we have data, we can begin querying! Oh, and mongo's shell has autocomplete... so <TAB> and <TAB> <TAB> your way to mastery.
 
+#### Part 4
+
 1. First, print out all of the clicks you have stored using `find()`
 1. Count how many documents are in your collection?
 2. There may be a lot, limit how many are returned with `limit()`. Return only 25.
 3. Using `find()`, get a bit more specific in your query.  Find all clicks from San Francisco.  How many are there? (if you did not get any from SF, count the clicks from California)
+
+#### Part 5
+
 4. We have a timestamp field, but right now it is just a string.  Using an [`update()`][14] command and a [`forEach()`][16] loop, convert all of the timestamps into [BSON date][15] objects.
 5. Now that we have true date objects, we can [query][17] our clicks by when they were clicked.  Since we have collected data in such a small time window this will be slightly artificial, but count how many clicks happened in the first minute of your data collection.
     * You may need to find the earliest click to know when you started collecting data.
+
+#### Part 6
+
 2. Using the mongoDB [aggregation][13] functionality, find what the most popular link clicked is? You will need to use `$group`, `$sum`, and `$sort`.
 
 ## Extra Credit
@@ -126,3 +141,4 @@ Here are some additional GUI clients if you so want to try (my favorite is RoboM
 [19]: http://docs.mongodb.org/manual/administration/indexes-geo/
 [20]: http://cartodb.com/
 [21]: http://blog.cartodb.com/post/66687861735/torque-is-live-try-it-on-your-cartodb-maps-today
+[22]: http://info.mongodb.com/rs/mongodb/images/mongodb_qrc_booklet.pdf
