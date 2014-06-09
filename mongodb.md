@@ -13,6 +13,8 @@ Throughout this tutorial use these references/cheatsheets to speed up the transi
 
 For this tutorial we will be using a raw feed of government website click-stream [data][11] from bitly.  We will get experience with MongoDB through it's shell and learn many of the basic operations.
 
+__Save your commands in a text file, which you will submit__
+
 First things first, let us setup our database.  Just like Postgres, mongoDB has a server process which you connect to with a client:
 
 ![mongo arch][3]
