@@ -33,28 +33,11 @@ We will be using the NYT API to download articles from the web.  Eventually we w
 
 ## Reading
 
-### HTTP
-
-* [HTTP Request Life Cycle (StackOverflow)](http://stackoverflow.com/questions/4814514/http-request-life-cycle)
 * [How does the internet work](http://docs.webplatform.org/wiki/concepts/internet_and_web/how_does_the_internet_work)
-
-### ReST
-* [Wikipedia](http://en.wikipedia.org/wiki/Representational_state_transfer)
-* [Haters gonna HATEOAS](http://timelessrepo.com/haters-gonna-hateoas)
-
-## Resources
-
-* [Requests HTTP library](http://docs.python-requests.org/en/latest/)
-* [Regular expression tester](http://pythex.org/)
-* [Google Regex tutorial](https://developers.google.com/edu/python/regular-expressions)
-* [Beautiful Soup (HTML parsing and searching)](http://www.crummy.com/software/BeautifulSoup/)
-* [MongoDB Python driver](http://api.mongodb.org/python/current/tutorial.html)
-* [Fielding's Dissertation](http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
-* [List of common HTTP status codes](http://www.smartlabsoftware.com/ref/http-status-codes.htm)
-* [API client](http://www.getpostman.com/)
-* [What is a "protocol"?](http://thomaslevine.com/!/street-sign-protocol)
-* [Web Scraping Tools](http://blog.marcua.net/post/74655674340)
-
+* Data Science Rules: Web Scraping and HTML
+   * [Part 1](http://datasciencerules.blogspot.com/2012/11/web-scraping-and-html-parsing.html)
+   * [Part 2](http://datasciencerules.blogspot.com/2012/11/web-scraping-and-html-parsing-2.html)
+* [Mapping Relational Database concepts to MongoDB](http://code.tutsplus.com/articles/mapping-relational-databases-and-sql-to-mongodb--net-35650)
 ## Assignment
 
 ### Outline
@@ -212,7 +195,29 @@ for each document:
 * Additional Features: total word count, sentiment of article, metadata of article, etc.
 
 ## Resources
+### HTTP
 
+* [HTTP Request Life Cycle (StackOverflow)](http://stackoverflow.com/questions/4814514/http-request-life-cycle)
+
+
+### ReST
+* [Wikipedia](http://en.wikipedia.org/wiki/Representational_state_transfer)
+* [Haters gonna HATEOAS](http://timelessrepo.com/haters-gonna-hateoas)
+
+## Resources
+
+* [Requests HTTP library](http://docs.python-requests.org/en/latest/)
+* [Regular expression tester](http://pythex.org/)
+* [Google Regex tutorial](https://developers.google.com/edu/python/regular-expressions)
+* [Beautiful Soup (HTML parsing and searching)](http://www.crummy.com/software/BeautifulSoup/)
+* [MongoDB Python driver](http://api.mongodb.org/python/current/tutorial.html)
+* [Fielding's Dissertation](http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
+* [List of common HTTP status codes](http://www.smartlabsoftware.com/ref/http-status-codes.htm)
+* [API client](http://www.getpostman.com/)
+* [What is a "protocol"?](http://thomaslevine.com/!/street-sign-protocol)
+* [Web Scraping Tools](http://blog.marcua.net/post/74655674340)
+
+* [Visual Guide to NoSQL](http://blog.nahurst.com/visual-guide-to-nosql-systems)
 * __[Requests HTTP library](http://docs.python-requests.org/en/latest/)__
 * __[wget](http://www.gnu.org/software/wget/)__ is your friend. __[curl](http://curl.haxx.se/)__ is your homie. 
 * __[Regular expression tester](http://pythex.org/)__
