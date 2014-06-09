@@ -85,7 +85,7 @@ Now that we can get the JSON and have a handle on pipes, we are ready to put all
 
 ![mind_blown](http://i.imgur.com/j74SykU.gif)
 
-So now that we have data, we can begin querying! Oh, and mongo's shell has autocomplete... so <TAB> and <TAB> <TAB> your way to mastery.
+So now that we have data, we can begin querying! Oh, and mongo's shell has autocomplete... so `<TAB>` and `<TAB> <TAB>` your way to mastery.
 
 __If you get stuck with reading from the stream, feel free to import one of the static [archive files][23]__
 
