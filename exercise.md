@@ -5,7 +5,7 @@ For this exercise we will be using the NYT [API](http://developer.nytimes.com/do
 1. Obtain an API key from the NYT for the Article Search API: [http://developer.nytimes.com/apps/register](http://developer.nytimes.com/apps/register)
 2. Now that we have access we can begin to have some fun!  Make a request to the article search API endpoint to retrieve the articles for last week.  
     * Look for what [parameters](http://developer.nytimes.com/docs/read/article_search_api_v2) you can set in your request using the API
-    * You probably want to use a HTTP library.  I like [Requests](http://docs.python-requests.org/en/latest/) but you can use whichever you like.
+    * Use [Requests](http://docs.python-requests.org/en/latest/) to interact with the API.
 3. Examine one of the articles returned.  Look at it's structure and the fields returned.  Make sure you can get a single article (and you know what it looks like) before you retrieve __ALL__ of the NYT.
 4. Now that you have some experience with the API and can sucessfully access articles with associated metadata, it is time to start storing them in [MongoDB](http://www.mongodb.org/)!
 
