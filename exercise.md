@@ -11,7 +11,7 @@ For this exercise we will be using the NYT [API](http://developer.nytimes.com/do
 
 ### MongoDB interlude
 
-You should have a MongoDB [daemon](http://docs.mongodb.org/manual/tutorial/manage-mongodb-processes/) running on your vagrant machine.  It is here that you will be storing all of your data, but be aware of how many articles you are crawling.
+You should have a MongoDB [daemon](http://docs.mongodb.org/manual/tutorial/manage-mongodb-processes/) running on your machine.  It is here that you will be storing all of your data, but be aware of how many articles you are crawling.
 
 Each [database](http://docs.mongodb.org/manual/reference/glossary/#term-database) has a number of [collections](http://docs.mongodb.org/manual/reference/glossary/#term-collection) analogous to SQL tables.  And each collection is comprised of [documents](http://docs.mongodb.org/manual/reference/glossary/#term-document) analogous to a rows in a SQL table.  And each document has [fields](http://docs.mongodb.org/manual/reference/glossary/#term-field) analogous to SQL columns.  Also, the docs have made a more comprehensive [comparison](http://docs.mongodb.org/manual/reference/sql-comparison/).
 
