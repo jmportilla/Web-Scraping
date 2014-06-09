@@ -85,6 +85,8 @@ Now that we can get the JSON and have a handle on pipes, we are ready to put all
 
 So now that we have data, we can begin querying! Oh, and mongo's shell has autocomplete... so <TAB> and <TAB> <TAB> your way to mastery.
 
+__If you get stuck with reading from the stream, feel free to import one of the static [archive files][23]__
+
 #### Part 4
 
 1. First, print out all of the clicks you have stored using `find()`
@@ -142,3 +144,4 @@ Here are some additional GUI clients if you so want to try (my favorite is RoboM
 [20]: http://cartodb.com/
 [21]: http://blog.cartodb.com/post/66687861735/torque-is-live-try-it-on-your-cartodb-maps-today
 [22]: http://info.mongodb.com/rs/mongodb/images/mongodb_qrc_booklet.pdf
+[23]: http://1usagov.measuredvoice.com/
