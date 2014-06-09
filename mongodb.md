@@ -71,7 +71,7 @@ In order to get data into our database we will exploit one of the niceties of it
 
 Now that we can get the JSON and have a handle on pipes, we are ready to put all the pieces together with `mongoimport`.  Things are about to get crazy, hold on to your seats...  Remember how we created a `clicks` database?  Well forget we ever did.
 
-### Part 3
+#### Part 3
 
 1. Curl the [government stream](http://dev.bitly.com/public_data.html)(1.USA,gov), pipe it to `mongoimport`, and import it into a database called `prism` in a collection called `bitly_clicks` (remember... no schemas, no masters). Collect data for 5 minutes or so. Remember at what time you began collecting data.
 2. Use the mongo shell (`mongo`) to connect to the database.
