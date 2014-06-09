@@ -16,7 +16,7 @@ First things first, let us setup our database.  Just like Postgres, mongoDB has 
 
 ![mongo arch][3]
 
-In this exercise our client will be the mongo shell.  There are also many other [client libraries](4) for most any programming language out there.
+In this exercise our client will be the mongo shell.  There are also many other [client libraries][4] for most any programming language out there.
 
 #### Getting Started
 
@@ -27,7 +27,7 @@ In this exercise our client will be the mongo shell.  There are also many other 
 
 #### Data Model
 
-MongoDB has many similar concepts to Postgres, you can use the official [docs](1) as a reference to map them.  There are databases with collections each of which have documents containing multiple fields.
+MongoDB has many similar concepts to Postgres, you can use the official [docs][1] as a reference to map them.  There are databases with collections each of which have documents containing multiple fields.
 
 ![mongo diag][5]
 
@@ -38,7 +38,7 @@ The biggest glaring difference between mongodb and SQL...
 * No joins
 * No transactions
 
-![](http://www.thevisualist.org/wp-content/uploads/2013/05/Butcher_GodsMasters_HighRes.jpg)
+<img src="http://www.thevisualist.org/wp-content/uploads/2013/05/Butcher_GodsMasters_HighRes.jpg" height=200>
 
 _Unless you shard..._
 
