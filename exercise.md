@@ -15,7 +15,7 @@ You should have a MongoDB [daemon](http://docs.mongodb.org/manual/tutorial/manag
 
 Each [database](http://docs.mongodb.org/manual/reference/glossary/#term-database) has a number of [collections](http://docs.mongodb.org/manual/reference/glossary/#term-collection) analogous to SQL tables.  And each collection is comprised of [documents](http://docs.mongodb.org/manual/reference/glossary/#term-document) analogous to a rows in a SQL table.  And each document has [fields](http://docs.mongodb.org/manual/reference/glossary/#term-field) analogous to SQL columns.  Also, the docs have made a more comprehensive [comparison](http://docs.mongodb.org/manual/reference/sql-comparison/).
 
-![mongo_diagram](http://zipfianacademy.com/data/images/mongo_diagram.png)
+![mongo_diagram](http://assets.zipfianacademy.com/data/images/mongo_diagram.png)
 
 1. Try storing the document you retrieved earlier in MongoDB (be careful to not store duplicates!).  We will be using the [pymongo](http://api.mongodb.org/python/current/tutorial.html) library to interface to MongoDB from Python.
 2. Now see if you can query the database for the article you just stored.
