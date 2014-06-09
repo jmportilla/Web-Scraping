@@ -62,3 +62,7 @@ Each [database](http://docs.mongodb.org/manual/reference/glossary/#term-database
 ![won-the-internet](http://25.media.tumblr.com/tumblr_m8bg80KH5l1qlh1s6o1_400.gif)
 
 You have made it to the end (hopefully succcessfully).  Now that you have your data and have contextualized it with information from the web, you can start performing some interesting analyses on it.
+
+## Extra Credit
+
+Scraping sites is easy when you can have cler access to the content and it is in a semi-structured form.  One issue that arises with scraping sites is the need to login.  
