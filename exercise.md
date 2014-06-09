@@ -65,4 +65,40 @@ You have made it to the end (hopefully succcessfully).  Now that you have your d
 
 ## Extra Credit
 
-Scraping sites is easy when you can have cler access to the content and it is in a semi-structured form.  One issue that arises with scraping sites is the need to login.  
+### User Login
+
+Scraping sites is easy when you can have clear access to the content and it is in a semi-structured form.  One issue that arises with scraping sites is the need to login.  
+
+1. Find a site that you might want to get data from that requires a login.
+
+* Use [Mechanize](http://wwwsearch.sourceforge.net/mechanize/) to login to a site to scrape.
+* [Mechanize For Beginners](http://www.pythonforbeginners.com/mechanize/browsing-in-python-with-mechanize/)
+* [Mechanize Login Tutorial](http://simplapi.wordpress.com/2012/04/20/pythons-mechanize-login-like-a-user/)
+* Example code in [advanced_scraping.ipynb](advanced_scraping.ipynb)
+
+### Client side templating
+
+Some sites do what is called [client side templating](http://www.smashingmagazine.com/2012/12/05/client-side-templating/), basically you send only data from the server and write a bunch of Javascript to dynamically write HTML when the page loads.
+
+1. Find a site that templates on the client.
+2. Look at the [Chrome Developer Tools](http://thewc.co/articles/view/web-inspector-tutorial) to find which "Resource" the data came in. __Hint Hint, look for a JSON file__
+
+### Automated Scraper
+
+Scraping the web from your laptop is great, but what if you want to automate things and have a long running process (scraping for days...)?  A common solution is to setup a script that continuous scrapes the web from a hosted virtual server on something like Amazon Web Service (AWS).
+
+1. Follow along on the auxiliary AWS sprint here: [https://github.com/zipfian/aws-and-the-cloud](https://github.com/zipfian/aws-and-the-cloud#assignment)
+2. Setup an automated scraper on AWS using [cron](http://www.unixgeeks.org/security/newbie/unix/cron-1.html) or a [python scheduler](https://github.com/dbader/schedule)
+3. Save the scraped files to [S3](http://aws.amazon.com/s3/) or a database.
+
+### Proxy
+
+Some sites block IPs from know bad actors.  LinkedIn actually does this for any Amazon Web Services (AWS) IP address.  But us being the smart data scientists we are, we will devise a solution!
+
+![](http://nickcavarretta.com.au/shitzu/uploads/2013/09/Scrape-all-the-things-300x225.png)
+
+[Tor](https://www.torproject.org/) is a lovely community built around anonymization on the web.  Tor allows for users to browse the web anonymously by daisy chaining a request across a network of nodes to hide the origin IP of the request.
+
+![tor](http://upload.wikimedia.org/wikipedia/commons/d/dc/Tor-onion-network.png)
+
+1. Using Tor and its [Python client](https://stem.torproject.org/tutorials.html), try to setup a scraper that is anonymized.  Bonus points if you host your scraper on AWS and successful can scrape LinkedIn profile pages.
