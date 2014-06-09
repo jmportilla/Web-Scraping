@@ -10,7 +10,7 @@ Throughout this tutorial use these references/cheatsheets to speed up the transi
 
 ### Exercise
 
-For this tutorial we will be using the raw feed of the Bay Area Bikeshare.  We will get experience with MongoDB through it's shell and learn many of the basic operations.
+For this tutorial we will be using a raw feed of government website click-stream [data][11] from bitly.  We will get experience with MongoDB through it's shell and learn many of the basic operations.
 
 First things first, let us setup our database.  Just like Postgres, mongoDB has a server process which you connect to with a client:
 
@@ -50,7 +50,7 @@ And __POOF__ it comes into existence (this also happens with collections)!
 
 1. What database are you currently connected to?
 2. What other databases are there?
-3. Create a new database called `bikeshare` for our Bikeshare data
+3. Create a new database called `clicks` for our click-stream data
 4. Double check that the database was created correctly and that you are currently 'using' it.
 
 Time for some fun... we will now begin to insert data into our database.  MongoDB uses an extension to JSON called [BSON](http://www.mongodb.com/json-and-bson) which adds support for more complex data types (dates, binary objects, ids, etc.).  Usually you need not concern yourself with the specific difference.
@@ -60,17 +60,42 @@ Time for some fun... we will now begin to insert data into our database.  MongoD
 
 In order to get data into our database we will exploit one of the niceties of its flexibility and one of the __few__ reasons to use it over SQL.  MongoDB (being the schemaless database it is) can basically accept any data on the fly (as long as it is properly formed JSON, CSV, or TSV) and create a schema for it.
 
-1. Using [curl][7] on the commandline, download the bikeshare [data][8] and print it to STDOUT (the terminal).
-2. Once you have it printing to the terminal, we can use UNIX [pipes][10] to pass the data to the [`mongoimport`][9] command.  For starters, pipe the result of the curl command to `less`.
+1. Using [curl][7] on the commandline, connect to the government stream [data][11] and print it to STDOUT (the terminal). Use the `-s` flag to silence the status bar. 
+    * Since it is a stream of data curl will keep the connection open.  Watch the data stream to your terminal STDOUT.
+2. Once you have it printing to the terminal, we can use UNIX [pipes][10] to pass the data to the [`mongoimport`][9] command.  For starters, pipe the result of the curl command to [`grep`][12] to filter the stream for clicks from NASA's site.  You need to use the `--no-buffer` flag for the command to output intermediate results.
 
-Now that we have the JSON and have a handle on pipes, we are ready to put all the pieces together with mongoimport.  Things are about to get crazy, hold on to your seats...  Remember how we created a `bikeshare` database?  Well forget we ever did.
+Now that we can get the JSON and have a handle on pipes, we are ready to put all the pieces together with `mongoimport`.  Things are about to get crazy, hold on to your seats...  Remember how we created a `clicks` database?  Well forget we ever did.
 
-1. Curl the bikeshare data, pipe it to `mongoimport`, and import it into a database called `flywheel` in a collection called `bike_stations` (remember... no schemas, no masters).
+1. Curl the government stream, pipe it to `mongoimport`, and import it into a database called `prism` in a collection called `bitly_clicks` (remember... no schemas, no masters). Collect data for 5 minutes or so. Remember at what time you began collecting data.
 2. Use the mongo shell (`mongo`) to connect to the database.
 3. Inspect your databases.  How many are there and what are their sizes?
-4. Inspect the collections, how much data is the bikeshare data? Remember to use your help: `help` and `db.help()` and... `db.<collection_name>.help()`
+4. Inspect the collections, how much data did you collect in your `bitly_clicks` collection? Remember to use your help: 
+    * `help`
+    * `db.help()`
+    * and... `db.<collection_name>.help()`
 
 ![mind_blown](http://i.imgur.com/j74SykU.gif)
+
+So now that we have data, we can begin querying! Oh, and mongo's shell has autocomplete... so <TAB> and <TAB> <TAB> your way to mastery.
+
+1. First, print out all of the clicks you have stored using `find()`
+1. Count how many documents are in your collection?
+2. There may be a lot, limit how many are returned with `limit()`. Return only 25.
+3. Using `find()`, get a bit more specific in your query.  Find all clicks from San Francisco.  How many are there? (if you did not get any from SF, count the clicks from California)
+4. We have a timestamp field, but right now it is just a string.  Using an [`update()`][14] command and a [`forEach()`][16] loop, convert all of the timestamps into [BSON date][15] objects.
+5. Now that we have true date objects, we can [query][17] our clicks by when they were clicked.  Since we have collected data in such a small time window this will be slightly artificial, but count how many clicks happened in the first minute of your data collection.
+    * You may need to find the earliest click to know when you started collecting data.
+2. Using the mongoDB [aggregation][13] functionality, find what the most popular link clicked is? You will need to use `$group`, `$sum`, and `$sort`.
+
+## Extra Credit
+
+MongoDB actually has some [geospatial][19] facilities (don't worry, Postgres has [even better][18] ones as well).  Using the geoindices and querying, answer the following:
+1. All clicks within 50 miles of San Francisco
+2. All clicks that came from [New England](http://en.wikipedia.org/wiki/New_England)
+
+#### CartoDB
+
+[CartoDB][20] happens to be one of my favorite tools for geospatial analysis (with built in PostGIS querying).  Map the clicks across the globe.  Visualize clicks over time with a [torque map][21].
 
 ### Additional GUI clients
 
@@ -89,3 +114,14 @@ Here are some additional GUI clients if you so want to try (my favorite is RoboM
 [8]: http://www.bayareabikeshare.com/stations/json
 [9]: http://docs.mongodb.org/manual/reference/program/mongoimport/#use
 [10]: http://www.ee.surrey.ac.uk/Teaching/Unix/unix3.html
+[11]: http://www.usa.gov/About/developer-resources/1usagov.shtml
+[12]: http://www.tutorialspoint.com/unix/unix-pipes-filters.htm
+[13]: http://docs.mongodb.org/manual/reference/sql-aggregation-comparison/
+[14]: http://stackoverflow.com/a/2900761
+[15]: http://armyofrobots.tumblr.com/post/12645585096/query-mongodb-using-timestamp
+[16]: http://stackoverflow.com/a/16918970
+[17]: http://cookbook.mongodb.org/patterns/date_range/
+[18]: http://postgis.net/
+[19]: http://docs.mongodb.org/manual/administration/indexes-geo/
+[20]: http://cartodb.com/
+[21]: http://blog.cartodb.com/post/66687861735/torque-is-live-try-it-on-your-cartodb-maps-today
