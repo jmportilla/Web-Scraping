@@ -10,6 +10,15 @@ For the morning please complete the exercise in [mongodb.md](mongodb.md)
 
 For the afternoon please complete the exercise in [exercise.md](exercise.md)
 
+### Outline
+
+* __Get experience using an [API](http://en.wikipedia.org/wiki/Application_programming_interface) to access the [NYT](http://www.nytimes.com/) articles__
+* __Store the retrieved articles and metadata in [MongoDB](http://www.mongodb.org/)__ 
+* __Use [regular expressions](http://en.wikipedia.org/wiki/Regular_expression) in [Python](http://docs.python.org/2/howto/regex.html) to search for all articles that contain the word 'Zipf' or 'Zipfian'__
+* __Have [FUN!](http://media.giphy.com/media/LlmVkDId8FzP2/giphy.gif) (that's an order)__
+
+![fun](http://24.media.tumblr.com/b7665f65538c9cd195521aa948d67d3d/tumblr_mk2e9tYHAU1s7rl3mo1_500.gif)
+
 ***
 
 ### Goals (part 1)
@@ -32,15 +41,6 @@ For the afternoon please complete the exercise in [exercise.md](exercise.md)
 * [Mapping Relational Database concepts to MongoDB](http://code.tutsplus.com/articles/mapping-relational-databases-and-sql-to-mongodb--net-35650)
 * [Getting Started with MongoDB](http://code.tutsplus.com/tutorials/getting-started-with-mongodb-part-1--net-22879)
 * [MongoDB Data modeling](http://docs.mongodb.org/manual/core/data-modeling-introduction/)
-
-### Outline
-
-* __Get experience using an [API](http://en.wikipedia.org/wiki/Application_programming_interface) to access the [NYT](http://www.nytimes.com/) articles__
-* __Store the retrieved articles and metadata in [MongoDB](http://www.mongodb.org/)__ 
-* __Use [regular expressions](http://en.wikipedia.org/wiki/Regular_expression) in [Python](http://docs.python.org/2/howto/regex.html) to search for all articles that contain the word 'Zipf' or 'Zipfian'__
-* __Have [FUN!](http://media.giphy.com/media/LlmVkDId8FzP2/giphy.gif) (that's an order)__
-
-![fun](http://24.media.tumblr.com/b7665f65538c9cd195521aa948d67d3d/tumblr_mk2e9tYHAU1s7rl3mo1_500.gif)
 
 ## Reference
 
