@@ -75,7 +75,7 @@ Now that we can get the JSON and have a handle on pipes, we are ready to put all
 
 #### Part 3
 
-1. Curl the [government stream](http://dev.bitly.com/public_data.html) (1.USA.gov), pipe it to `mongoimport`, and import it into a database called `prism` in a collection called `bitly_clicks` (remember... no schemas, no masters). Collect data for 5 minutes or so. Remember at what time you began collecting data.
+1. Curl the [government stream](http://dev.bitly.com/public_data.html) (1.USA.gov) #nofilter (i.e. the entire stream), pipe it to `mongoimport`, and import it into a database called `prism` in a collection called `bitly_clicks` (remember... no schemas, no masters). Collect data for 5 minutes or so. Remember at what time you began collecting data.
 2. Use the mongo shell (`mongo`) to connect to the database.
 3. Inspect your databases.  How many are there and what are their sizes?
 4. Inspect the collections, how much data did you collect in your `bitly_clicks` collection? Remember to use your help: 
