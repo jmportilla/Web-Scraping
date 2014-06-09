@@ -38,7 +38,7 @@ The biggest glaring difference between mongodb and SQL...
 * No joins
 * No transactions
 
-<img src="http://www.thevisualist.org/wp-content/uploads/2013/05/Butcher_GodsMasters_HighRes.jpg" height=200>
+<img src="http://www.thevisualist.org/wp-content/uploads/2013/05/Butcher_GodsMasters_HighRes.jpg" height=800>
 
 _Unless you shard..._
 
