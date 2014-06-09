@@ -2,7 +2,17 @@
 
 We will be using the NYT API to download articles from the web.  Eventually we will be performing NLP and machine learning on the articles to do awesome things like document clustering, document filtering/classification, network analysis, and some indexing.  For this sprint we are just concerned with getting some data.
 
-## Goals (part 1)
+### Morning
+
+For the morning please complete the exercise in [mongodb.md](mongodb.md)
+
+### Afternoon
+
+For the afternoon please complete the exercise in [exercise.md](exercise.md)
+
+***
+
+### Goals (part 1)
 * HTTP and hypermedia (i.e. links)
 * ReST
 * MongoDB
