@@ -61,4 +61,4 @@ Each [database](http://docs.mongodb.org/manual/reference/glossary/#term-database
 
 ![won-the-internet](http://25.media.tumblr.com/tumblr_m8bg80KH5l1qlh1s6o1_400.gif)
 
-You have made it to the end (hopefully succcessfully).  Now that you have your data and have contextualized it with information from the web, you can start performing some interesting analyses on it. Some ideas to get you started:
+You have made it to the end (hopefully succcessfully).  Now that you have your data and have contextualized it with information from the web, you can start performing some interesting analyses on it.
