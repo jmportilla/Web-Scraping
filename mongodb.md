@@ -5,8 +5,8 @@ In order to get used to mongoDB and it's quirks, we will play around with the mo
 ### References
 
 Throughout this tutorial use these references/cheatsheets to speed up the transition from SQL:
-* [SQL -> MongoDB mapping](1)
-* [MongoDB Cheatsheet](2)
+* [SQL -> MongoDB mapping][1]
+* [MongoDB Cheatsheet][2]
 
 ### Exercise
 
@@ -14,7 +14,7 @@ For this tutorial we will be using the raw feed of the Bay Area Bikeshare.  We w
 
 First things first, let us setup our database.  Just like Postgres, mongoDB has a server process which you connect to with a client:
 
-![mongo arch](3)
+![mongo arch][3]
 
 In this exercise our client will be the mongo shell.  There are also many other [client libraries](4) for most any programming language out there.
 
@@ -29,7 +29,7 @@ In this exercise our client will be the mongo shell.  There are also many other 
 
 MongoDB has many similar concepts to Postgres, you can use the official [docs](1) as a reference to map them.  There are databases with collections each of which have documents containing multiple fields.
 
-![mongo diag](5)
+![mongo diag][5]
 
 The biggest glaring difference between mongodb and SQL...
 
@@ -39,6 +39,7 @@ The biggest glaring difference between mongodb and SQL...
 * No transactions
 
 ![](http://www.thevisualist.org/wp-content/uploads/2013/05/Butcher_GodsMasters_HighRes.jpg)
+
 _Unless you shard..._
 
 
