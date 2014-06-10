@@ -9,6 +9,7 @@ Assume we are building a restaurant recommendation engine based on user reviews.
 2. How many New American Restaurants are there in SF?
 3. For each Restaurant, scrape the first page of reviews from each restaurant.
 4. For each Restaurant count how many 5 star reviews it has gotten.
+5. Now try to get metadata on all of the restaurants in SF
 
 ## (Extra) Fun!
 
