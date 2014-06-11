@@ -4,7 +4,7 @@ For this sprint we will scape reviews from Yelp.  Just like the NYT (and any lar
 
 Assume we are building a restaurant recommendation engine based on user reviews.  The first step in this process is to get data.
 
-1. Using the [Yelp API](http://www.yelp.com/developers/documentation/v2/search_api) find all New American Restaurants in SF.
+1. Using the [Yelp API](http://www.yelp.com/developers/documentation/v2/search_api) find all Gastropubs in SF.
 2. Store these records into MongoDB.
 2. How many Gastropubs are there in SF?
 3. For each Restaurant, scrape the first page of reviews from each restaurant.
