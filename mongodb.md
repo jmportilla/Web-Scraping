@@ -1,4 +1,4 @@
-## MongoDB Tutorial
+## MongoDB
 
 In order to get used to mongoDB and it's quirks, we will play around with the mongo [shell](http://docs.mongodb.org/v2.2/mongo/).  The mongo shell is somewhat similar to the Postgres shell, albeit has a very (very) different syntax.  Part of this is due to the differences between a document database and a relational database.
 
@@ -15,12 +15,6 @@ For this tutorial we will be using a raw feed of government website click-stream
 
 __Save your commands in a text file, which you will submit__
 
-First things first, let us setup our database.  Just like Postgres, mongoDB has a server process which you connect to with a client:
-
-![mongo arch][3]
-
-In this exercise our client will be the mongo shell.  This happens to be a Javascript shell (and can execute any arbitrary Javascript code -- like creating functions). There are also many other [client libraries][4] for most any programming language out there.
-
 #### Getting Started
 
 1. Make sure the mongoDB server process is running by trying to connect to it with the shell client: `mongo`
@@ -28,28 +22,6 @@ In this exercise our client will be the mongo shell.  This happens to be a Javas
     * If it complains you need to start the process: `mongod`
 2. Connect to the server daemon (background) process (if you haven't already) with the mongo shell client: `mongo`
 3. Display both mongo help and the database help: `help` and `db.help()` respectively
-
-#### Data Model
-
-MongoDB has many similar concepts to Postgres, you can use the official [docs][1] as a reference to map them.  There are databases with collections each of which have documents containing multiple fields.
-
-![mongo diag][5]
-
-The biggest glaring difference between mongodb and SQL...
-
-> MongoDB is a document-oriented DBMS. Think of MySQL but with JSON-like objects comprising the data model, rather than RDBMS tables. Significantly, MongoDB supports neither joins nor transactions. However, it features secondary indexes, an expressive query language, atomic writes on a per-document level, and fully-consistent reads.
-
-* No schema
-* No joins
-* No transactions
-
-<img src="http://www.thevisualist.org/wp-content/uploads/2013/05/Butcher_GodsMasters_HighRes.jpg" height=500>
-
-_Unless you shard..._
-
-Using the following [guide][6] as a reference, begin exploring the database. Mongo (being the very flexible database it is) can create databases, collections, documents, etc. on the fly.  For example, to create a new database simply try to use the database you haven't created: `use my_new_database`
-
-And __POOF__ it comes into existence (this also happens with collections)!
 
 #### Part 1
 
