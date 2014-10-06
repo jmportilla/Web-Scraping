@@ -66,11 +66,10 @@ Time for some fun... we will now begin to insert data into our database.  MongoD
 In order to get data into our database we will exploit one of the niceties of its flexibility and one of the __few__ reasons to use it over SQL.  MongoDB (being the schemaless database it is) can basically accept any data on the fly (as long as it is properly formed JSON, CSV, or TSV) and create a schema for it.
 
 #### Part 2
-1. 
 2. Using [curl][7] on the commandline, connect to the government data feed: http://developer.usa.gov/1usagov 
 3. print it to STDOUT (the terminal). Use the `-s` flag to silence the status bar. 
     * Since it is a stream of data curl will keep the connection open.  Watch the data stream to your terminal STDOUT.
-4. Once you have it printing to the terminal, using UNIX [pipes][10] we can pass or output that streaming data into either a .txt file, or directly into a mongodb using with  [`mongoimport`][9] command.  
+4. Once you have it printing to the terminal, using UNIX [pipes][10] we can pipe them directly into a mongodb using with  [`mongoimport`][9] command.  *using UNIX `>` command you can pass it into a text file. 
 5. If you are comfortable using bash and shell you can parse your data with those now, like, even before you pass it into the monogdb, or you can just clean it directly in mongodb. 
 6. For starters, pipe the result of the curl command to [`grep`][12] to filter the stream for clicks from NASA's site.  You need to use the `--no-buffer` flag for the command to output intermediate results.
 
