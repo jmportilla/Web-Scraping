@@ -18,7 +18,7 @@ In this exercise our client will be the mongo shell.  This happens to be a Javas
 
 #### Where is the Data?
 
-MongoDB just like Postgres (or any database really) uses a binary format to store the data contained within it.  There is a specified database file (defaults to `/data/db) which you can [set][3.1] in its configuration.  But you should not think of it in this way, the client-server abstraction is quite powerful and anytime you need to put data in MongoDB or take data out you must go through the gatekeeper (the client ex: `mongo`).
+MongoDB just like Postgres (or any database really) uses a binary format to store the data contained within it.  There is a specified database file (defaults to `/data/db`) which you can [set][3.1] in its configuration.  But you should not think of it in this way, the client-server abstraction is quite powerful and anytime you need to put data in MongoDB or take data out you must go through the gatekeeper (the client ex: `mongo`).
 
 #### SQL vs. NoSQL
 
