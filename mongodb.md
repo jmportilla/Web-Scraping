@@ -73,7 +73,7 @@ In order to get data into our database we will exploit one of the niceties of it
 5. If you are comfortable using bash and shell you can parse your data with those now, like, even before you pass it into the monogdb, or you can just clean it directly in mongodb. 
 6. For starters, pipe the result of the curl command to [`grep`][12] to filter the stream for clicks from NASA's site.  You need to use the `--no-buffer` flag for the command to output intermediate results.
 7. Now that we can get the JSON and have a handle on pipes, we are ready to put all the pieces together with `mongoimport`.  Things are about to get crazy, hold on to your seats...  Remember how we created a `clicks` database?  Well forget we ever did.
-8. on the commandline, this is how the you should set up your monogimport command.  Put the name of your database after the `--db` part , and the name of the collection after the `--collection` part.  `$ curl stuff goes here |  mongoimport --db <database name> --collection <collection name>`
+8. on the commandline, this is how the you should set up your monogimport command.  Put the name of your database after the `--db` part , and the name of the collection after the `--collection` part. <br> `$ curl stuff goes here |  mongoimport --db <database name> --collection <collection name>`
 
 #### Part 3
 
