@@ -4,11 +4,11 @@ We will be using the NYT API to download articles from the web.  Eventually we w
 
 ### Morning
 
-For the morning please complete the exercise in [mongodb.md](mongodb.md)
+For the morning please complete the exercise in [individual.md](individual.md)
 
 ### Afternoon
 
-For the afternoon please complete the exercise in [exercise.md](exercise.md)
+For the afternoon please complete the exercise in [pair.md](pair.md)
 
 ### Outline
 
