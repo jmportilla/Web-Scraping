@@ -52,7 +52,7 @@ Each [database](http://docs.mongodb.org/manual/reference/glossary/#term-database
 
 9. Now that we have all the meta data, it it time to get the article content!  We will be doing something I call a data join (some people call it [data blending](http://www.tableausoftware.com/videos/data-integration)... but they charge you money so they can call it that).
     * Iterate over your collection in your database.  For all the articles for which you do not have HTML content (this will be all of them to begin with), use the 'web url' in the meta data to make a web request.
-    * Use Beautiful Soup to parse the returned HTML.
+    * Use Beautiful Soup to parse the returned HTML. Make sure to initialize your soup with: `BeautifulSoup(response.text, 'html.parser')`
     * Augment your meta data in the database with this raw HTML from the web page.
     * The web page has much more than just the article content.  Find out how to extract just the article body and store this in the database as well.
     * Store __both__ the raw HTML and the article content in the database.
