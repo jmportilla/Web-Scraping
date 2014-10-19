@@ -62,6 +62,7 @@ For the afternoon please complete the exercise in [pair.md](pair.md)
 * __[boilerpipe](https://github.com/misja/python-boilerpipe)__ article extraction
 * [Web Scraping Tools](http://blog.marcua.net/post/74655674340)
 * [Visual Guide to NoSQL](http://blog.nahurst.com/visual-guide-to-nosql-systems)
+* [MongoDB Cheatsheet](https://blog.codecentric.de/files/2012/12/MongoDB-CheatSheet-v1_0.pdf)
 
 ### REGEX
 * [Regular expression tester](http://pythex.org/)
