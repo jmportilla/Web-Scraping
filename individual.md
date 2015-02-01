@@ -1,4 +1,4 @@
-##Installation and Resources for MongoDB
+##MongoDB Installation
 
 1. To install MongoDB, download the zip file that matches your operating system from 
    [here](http://www.mongodb.org/downloads?_ga=1.2370361.886345798.1422741448)
