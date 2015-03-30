@@ -3,7 +3,7 @@
 1. To install MongoDB, download the zip file that matches your operating system from 
    [here](http://www.mongodb.org/downloads?_ga=1.2370361.886345798.1422741448)
 
-2. Much like PostGres, you will need to launch the server before using Mongo. 
+2. Much like Postgres, you will need to launch the server before using Mongo. 
 
    - If the directory `/data/db` does not exist, create it by: `mkdir -p /data/db`
    - To start the Mongo server: `sudo mongod`
