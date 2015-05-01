@@ -40,9 +40,16 @@ Paste and run the queries in the Mongo shell.
    Mongo also has tab complete, so you can tab complete some of your commands for conveinience.  
 
 5. Print out all of the clicks you have stored using `find()`. 
-   Now using `limit()`, return 10 entries.
-   
-6. Use `find()` to find all the clicks where `cy` (city) is `San Francisco`. How many are there? 
+   Now using `limit()`, return 10 entries. You can also use `findOne()` to quickly view the first row
+   and examine the available columns.  
+
+6. Use `find()` to find all the clicks where `cy` (city) is `San Francisco`. How many are there?
+
+7. Use `distinct()` to find all the distinct types of web browsers (under the field `a`) people use to
+   visit the sites. Count the the number distinct web browsers (use `.length` of your distinct list)
+
+8. Select and count the records where the users has visited a website either from a `Mozilla/5.0` or an `Opera` web     browser. Search the `a` field using 
+   [regex in mongo](http://stackoverflow.com/questions/3305561/how-to-query-mongodb-with-like).
 
 7. Find the type of the `t` (timestamp) field. You can access the type of a field in an entry by
    `typeof db.log.findOne({'t': {$exists: true}}).t`. The field should be a `number` now.
