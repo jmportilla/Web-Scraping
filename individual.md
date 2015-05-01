@@ -51,17 +51,17 @@ Paste and run the queries in the Mongo shell.
 8. Select and count the records where the users has visited a website either from a `Mozilla/5.0` or an `Opera` web     browser. Search the `a` field using 
    [regex in mongo](http://stackoverflow.com/questions/3305561/how-to-query-mongodb-with-like).
 
-7. Find the type of the `t` (timestamp) field. You can access the type of a field in an entry by
+9. Find the type of the `t` (timestamp) field. You can access the type of a field in an entry by
    `typeof db.log.findOne({'t': {$exists: true}}).t`. The field should be a `number` now.
    
    Convert the field to the date type. You would need to multiply the number by 1000 and then make it a
-   `Date` object. Loop over each record using `forEach()` and `update()` the record (using the `_id` field) with the
-   converted object. Confirm the data type has been converted.
+   `new Date()` object. Loop over each record using `forEach()` and `update()` the record (using the `_id` field)
+   with the converted object. Confirm the data type has been converted.
    
-8. Sort the clicks by time and find when the first click occured. How many click occured in the first hour ?
+10. Sort the clicks by time and find when the first click occured. How many click occured in the first hour ?
    Assign the earliest time and time at the one-hour bound to separate variables before writing the query.
 
-9. Using the Mongo's [aggregation](http://docs.mongodb.org/manual/reference/sql-aggregation-comparison/)
+11. Using the Mongo's [aggregation](http://docs.mongodb.org/manual/reference/sql-aggregation-comparison/)
    functionality, find what the most popular link clicked is? You will need
    to use `$group`, `$sum`, and `$sort`.
 
