@@ -11,9 +11,13 @@ walk through the work flow in the exercise below.
 
    ![image](pics/first_image.png)
 
+   <br>
+   
 2. Right click on the first shoe image and click `Inspect Element` to bring up a panel, as seen below.
 
    ![image](pics/second_image.png)
+
+   <br>
 
 3. Construct a CSS select that would allow you to select every shoe image on the page.
    The CSS selector should be referring to the `img` tag of a particular class. 
@@ -21,6 +25,8 @@ walk through the work flow in the exercise below.
    `$('your css selector')`. Hover over one of the selected elements, it should be as seen below.
 
    ![image](pics/third_image.png)
+
+   <br>
 
 4. Open up IPython in your terminal and import BeautifulSoup4 with the line `from bs4 import BeautifulSoup`.
    Read `data/ebay_shoes.html` in as one string from the file and put it into a `BeautifulSoup()` with the 
