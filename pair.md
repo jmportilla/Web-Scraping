@@ -20,7 +20,7 @@ walk through the work flow in the exercise below.
    Click `Console` to switch to the console mode. Select the CSS selector by entering into the console 
    `$('your css selector')`. Hover over one of the selected elements, it should be as seen below.
 
-   ![image](pics/third.png)
+   ![image](pics/third_image.png)
 
 4. Open up IPython in your terminal and import BeautifulSoup4 with the line `from bs4 import BeautifulSoup`.
    Read `data/ebay_shoes.html` in as one string from the file and put it into a `BeautifulSoup()` with the 
