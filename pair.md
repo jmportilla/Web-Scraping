@@ -8,12 +8,40 @@ walk through the work flow in the exercise below.
 <br>
 
 1. Open up `data/ebay_shoes.html` with Google Chrome. It should be as shown below.
+   ![image](pics/first_image.png)
 
+2. Right click on the first shoe image and click `Inspect Element` to bring up a panel, as seen below.
+   ![image](pics/second_image.png)
 
+3. Construct a CSS select that would allow you to select every shoe image on the page.
+   The CSS selector should be referring to the `img` tag of a particular class. 
+   Click `Console` to switch to the console mode. Select the CSS selector by entering into the console 
+   `$('your css selector')`. Hover over one of the selected elements, it should be as seen below.
 
-## Exercise
+   ![image](pics/third.png)
 
-For this exercise we will be using the NYT [API](http://developer.nytimes.com/docs/read/article_search_api_v2) to programmatically retrieve its articles.
+4. Open up IPython in your terminal and import BeautifulSoup4 with the line `from bs4 import BeautifulSoup`.
+   Read `data/ebay_shoes.html` in as one string from the file and put it into a `BeautifulSoup()` with the 
+   line `soup = BeautifulSoup(html_str)`. 
+
+   You should be able to use the CSS selector on the soup using `soup.select('your css selector')`. It will 
+   then return a list of tags that each contains the source of the image location. Create a list of the paths to the    image locations by looping through the tags and accessing the image path by `tag['src']`.
+
+5. Open the file paths and read the files in as string. Write them to a new directory named `images`. Open the   
+   files in the `images` directory to ensure the images are saved properly.
+
+6. This is the basic work flow of web scraping with CSS selectors. Realistically you would not be reading in a local
+   html file, but read the html file from a link instead. Go to ebay, search for your a product of your choice and 
+   copy the link. Use the `get` function in the [`requests` library](http://docs.python-requests.org/en/latest/)
+   to retrieve the html. The `get` function returns a response where `response.content` returns the html as a 
+   string.
+   
+7. Retrieve the product descriptions from your selected page by following the web scraping work flow.  
+
+##Part 2: Using an API
+
+We do not always have to web scrape. Sometime the web site provides an API to access the information. The API 
+is usually easier to use then constructing your own CSS selector. In the following exercise we will be using the NYT [API](http://developer.nytimes.com/docs/read/article_search_api_v2) to programmatically retrieve its articles.
 
 1. Obtain an API key from the NYT for the Article Search API: [http://developer.nytimes.com/apps/register](http://developer.nytimes.com/apps/register)
 2. Now that we have access we can begin to have some fun!  Make a request to the article search API endpoint to retrieve the articles for last week.  
