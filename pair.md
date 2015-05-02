@@ -8,9 +8,11 @@ walk through the work flow in the exercise below.
 <br>
 
 1. Open up `data/ebay_shoes.html` with Google Chrome. It should be as shown below.
+2. 
    ![image](pics/first_image.png)
 
 2. Right click on the first shoe image and click `Inspect Element` to bring up a panel, as seen below.
+3. 
    ![image](pics/second_image.png)
 
 3. Construct a CSS select that would allow you to select every shoe image on the page.
