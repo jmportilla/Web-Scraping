@@ -1,3 +1,16 @@
+##Part 1: Practice CSS Selectors
+
+CSS selectors are an important part of web scraping as they allow you to select content on a web page. Refer to 
+this [document](css_selector_cheatsheet.pdf) if you need a reminder of the CSS selectors that are available to you.
+The best way to test out CSS selectors is to use the `Inspect Element` tool in the Google Chrome browser. We will
+walk through the work flow in the exercise below.
+
+<br>
+
+1. Open up `data/ebay_shoes.html` with Google Chrome. It should be as shown below.
+
+
+
 ## Exercise
 
 For this exercise we will be using the NYT [API](http://developer.nytimes.com/docs/read/article_search_api_v2) to programmatically retrieve its articles.
