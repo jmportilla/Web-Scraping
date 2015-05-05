@@ -27,7 +27,3 @@
 * [etc.](http://developer.trulia.com/)
 * [etc.](http://dev.evernote.com/documentation/cloud/)
 * [etc.](http://www.songkick.com/developer/)
-
-#### DIY
-* Webscraping 
-* manual downloads
