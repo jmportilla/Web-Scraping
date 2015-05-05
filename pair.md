@@ -113,15 +113,16 @@ is usually easier to use then constructing your own CSS selector. In the followi
     * You will want to check how your loop is progressing, be sure to print some checkpoint information on how many 
       documents it has downloaded (maybe every 100 articles?).  
 
+<br>
 
 ##Part 4: Scraping using the meta data
 
-At this point:
+**At this point:**
+- **We have successful gathered article metadata from the NYT API**
+- **We have stored said data in MongoDB**
+- **We have URLs for each article that we can now use for scraping**
 
-* We have successful gathered article metadata from the NYT API
-* We have stored said data in MongoDB
-* We have URLs for each article that we can now use for scraping
-
+<br>
 
 1. Now that we have all the meta data, it it time to get the article content!  We will be doing something 
    I call a data join (some people call it [data blending](http://www.tableausoftware.com/videos/data-integration)... but they charge you money so they can call it that).
