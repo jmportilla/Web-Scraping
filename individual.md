@@ -55,8 +55,16 @@ Paste and run the queries in the Mongo shell.
    `typeof db.log.findOne({'t': {$exists: true}}).t`. The field should be a `number` now.
    
    Convert the field to the date type. You would need to multiply the number by 1000 and then make it a
-   `new Date()` object. Loop over each record using `forEach()` and `update()` the record (using the `_id` field)
-   with the converted object. Confirm the data type has been converted.
+   `new Date()` object. Loop over each record using `forEach()` and 
+   [`update()`](http://docs.mongodb.org/manual/reference/operator/update/set/) the record (using the `_id` field)
+   with the converted object. Confirm the data type has been converted. Below is some template code.
+
+   ```javascript
+   db.log.find({'t': {$exists: true}}).forEach(function(entry) {
+      // your code to update an entry by _id and set the t field as a new Date() object
+      })
+   })
+   ```
    
 10. Sort the clicks by time and find when the first click occured. How many click occured in the first hour ?
    Assign the earliest time and time at the one-hour bound to separate variables before writing the query.
