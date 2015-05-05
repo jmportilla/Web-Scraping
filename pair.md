@@ -53,7 +53,7 @@ walk through the work flow in the exercise below.
 
 4. Open up IPython in your terminal and import BeautifulSoup4 with the line `from bs4 import BeautifulSoup`.
    Read `data/ebay_shoes.html` in as one string from the file and put it into a `BeautifulSoup()` with the 
-   line `soup = BeautifulSoup(html_str)`. 
+   line `soup = BeautifulSoup(html_str, 'html.parser')`. 
 
    You should be able to use the CSS selector on the soup using `soup.select('your css selector')`. It will 
    then return a list of tags that each contains the source of the image location. Create a list of the paths to the    image locations by looping through the tags and accessing the image path by `tag['src']`.
