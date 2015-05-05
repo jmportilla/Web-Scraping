@@ -1,17 +1,25 @@
 ##Part 1: Using the PyMongo Client
- 
-### MongoDB interlude
 
-You should have a MongoDB [daemon](http://docs.mongodb.org/manual/tutorial/manage-mongodb-processes/) running on your machine.  It is here that you will be storing all of your data, but be aware of how many articles you are crawling.
+The PyMongo Client resembles Python much more than the Mongo shell we have dealt with this morning. In most applications, you will use PyMongo to interact with your Mongo Database as part of your data pipeline. 
 
-Each [database](http://docs.mongodb.org/manual/reference/glossary/#term-database) has a number of [collections](http://docs.mongodb.org/manual/reference/glossary/#term-collection) analogous to SQL tables.  And each collection is comprised of [documents](http://docs.mongodb.org/manual/reference/glossary/#term-document) analogous to a rows in a SQL table.  And each document has [fields](http://docs.mongodb.org/manual/reference/glossary/#term-field) analogous to SQL columns.  Also, the docs have made a more comprehensive [comparison](http://docs.mongodb.org/manual/reference/sql-comparison/).
+<br>
 
-![mongo_diagram](http://assets.zipfianacademy.com/data/images/mongo_diagram.png)
+1. Use the follow snippet to start a Pymongo client and create a new collection (table) within a new database.   
+  
+   ```python
+   from pymongo import MongoClient
+   client = MongoClient()
+   # Initiate Database
+   db = client['test_database']
+   # Initiate Table
+   tab = db['test_table']
+   ```
+2. Insert an entry into the collection you have initiated. Check if the entry is inserted from the mongo shell.
+   Query the inserted entry from Pymongo.
 
-1. Try storing the document you retrieved earlier in MongoDB (be careful to not store duplicates!).  We will be using the [pymongo](http://api.mongodb.org/python/current/tutorial.html) library to interface to MongoDB from Python.
-2. Now see if you can query the database for the article you just stored.
-3. Now that you can store and retrieve articles in the Mongo Database, it is time to iterate!
+3. Try updating the entry you have inserted and verify that it has been updated.
 
+<br>
 
 ##Part 2: Practice CSS Selectors
 
@@ -61,7 +69,9 @@ walk through the work flow in the exercise below.
    
 7. Retrieve the product descriptions from your selected page by following the web scraping work flow.  
 
-##Part 2: Using a Web API 
+<br>
+
+##Part 3: Using a Web API 
 
 We do not always have to web scrape. Sometimes the web site provides an API to access the information. The API 
 is usually easier to use then constructing your own CSS selector. In the following exercise we will be using the NYT [API](http://developer.nytimes.com/docs/read/article_search_api_v2) to programmatically retrieve its articles.
@@ -74,7 +84,6 @@ is usually easier to use then constructing your own CSS selector. In the followi
     * Use [Requests](http://docs.python-requests.org/en/latest/) to interact with the API.
 3. Examine one of the articles returned.  Look at it's structure and the fields returned.  Make sure you can get a single article (and you know what it looks like) before you retrieve __ALL__ of the NYT.
 4. Now that you have some experience with the API and can sucessfully access articles with associated metadata, it is time to start storing them in [MongoDB](http://www.mongodb.org/)!
-
 
 4. Now that you have a sense of what a single article response looks like, we can begin to scale up.  Begin downloading all of the NYT articles starting with the most recent.  You will not have time (or effort) to download all of the corpus, so let us start with the most recent articles and download as many as we can!  Store these in mongoDB.
 5.  Inspect how many articles were returned from your request for all of the NYT.  
