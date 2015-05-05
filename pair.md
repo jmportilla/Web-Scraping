@@ -137,6 +137,8 @@ is usually easier to use then constructing your own CSS selector. In the followi
 
 You have made it to the end (hopefully succcessfully).  Now that you have your data and have contextualized it with information from the web, you can start performing some interesting analyses on it.
 
+<br>
+
 ## Extra Credit
 
 ### User Login
