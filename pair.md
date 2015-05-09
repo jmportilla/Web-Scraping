@@ -126,14 +126,29 @@ is usually easier to use then constructing your own CSS selector. In the followi
 
 1. Now that we have all the meta data, it it time to get the article content!  We will be doing something 
    I call a data join (some people call it [data blending](http://www.tableausoftware.com/videos/data-integration)... but they charge you money so they can call it that).
-    * Iterate over your collection in your database.  For all the articles for which you do not have HTML content (this will be all of them to begin with), use the 'web url' in the meta data to make a web request.
-    * Use Beautiful Soup to parse the returned HTML. Make sure to initialize your soup with:   
-      `BeautifulSoup(response.text, 'html.parser')`
-    * Augment your meta data in the database with this raw HTML from the web page.
-    * The web page has much more than just the article content.  Find out how to extract just the article body and 
-      store this in the database as well.
-    * Store __both__ the raw HTML and the article content in the database.
-
+    * Iterate over your collection in your database.  For all the articles for which you do not have HTML content 
+      (this will be all of them to begin with), use the 'web url' in the meta data to make a web request.
+    
+  
+    * Use Beautiful Soup to parse the returned HTML. Make sure to initialize `soup` with:   
+      `soup = BeautifulSoup(response.text, 'html.parser')`
+      
+    * Add a new field in the meta data records in your Mongo database to store the raw HTML from the web page.
+    
+    * Find the CSS selectors that would allow you to extract article text in the web pages. You can use the Chrome 
+      DevTools to help you find the relevant CSS Selectors. If you are having problems such as
+      `$ is not a function`. Use the following script to load in the jQuery library and then try again.
+  
+      ```js
+      var jq = document.createElement('script');
+      jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js";
+      document.getElementsByTagName('head')[0].appendChild(jq);
+      ```
+      
+    * Use `soup.select(Your CSS Selector)` to extract article text from the web pages.
+    
+    * Add a new field in the meta data records in your Mongo database to store the text of the articles.
+   
 
 You have made it to the end (hopefully succcessfully).  Now that you have your data and have contextualized it with information from the web, you can start performing some interesting analyses on it.
 
