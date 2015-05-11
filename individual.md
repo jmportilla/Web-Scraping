@@ -48,15 +48,23 @@ Paste and run the queries in the Mongo shell.
 7. Use `distinct()` to find all the distinct types of web browsers (under the field `a`) people use to
    visit the sites. Count the the number distinct web browsers (use `.length` of your distinct list)
 
-8. Select and count the records where the users has visited a website either from a `Mozilla/5.0` or an `Opera` web     browser. Search the `a` field using 
+8. Select and count the records where the users has visited a website either from a `Mozilla` or an `Opera` web     browser. Search the `a` field using 
    [regex in mongo](http://stackoverflow.com/questions/3305561/how-to-query-mongodb-with-like).
 
 9. Find the type of the `t` (timestamp) field. You can access the type of a field in an entry by
    `typeof db.log.findOne({'t': {$exists: true}}).t`. The field should be a `number` now.
    
    Convert the field to the date type. You would need to multiply the number by 1000 and then make it a
-   `new Date()` object. Loop over each record using `forEach()` and `update()` the record (using the `_id` field)
-   with the converted object. Confirm the data type has been converted.
+   `new Date()` object. Loop over each record using `forEach()` and 
+   [`update()`](http://docs.mongodb.org/manual/reference/operator/update/set/) the record (using the `_id` field)
+   with the converted object. Confirm the data type has been converted. Below is some template code.
+
+   ```javascript
+   db.log.find({'t': {$exists: true}}).forEach(function(entry) {
+      // your code to update an entry by _id and set the t field as a new Date() object
+      })
+   })
+   ```
    
 10. Sort the clicks by time and find when the first click occured. How many click occured in the first hour ?
    Assign the earliest time and time at the one-hour bound to separate variables before writing the query.

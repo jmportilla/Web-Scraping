@@ -1,17 +1,25 @@
 ##Part 1: Using the PyMongo Client
- 
-### MongoDB interlude
 
-You should have a MongoDB [daemon](http://docs.mongodb.org/manual/tutorial/manage-mongodb-processes/) running on your machine.  It is here that you will be storing all of your data, but be aware of how many articles you are crawling.
+The PyMongo Client resembles Python much more than the Mongo shell we have dealt with this morning. In most applications, you will use PyMongo to interact with your Mongo Database as part of your data pipeline. 
 
-Each [database](http://docs.mongodb.org/manual/reference/glossary/#term-database) has a number of [collections](http://docs.mongodb.org/manual/reference/glossary/#term-collection) analogous to SQL tables.  And each collection is comprised of [documents](http://docs.mongodb.org/manual/reference/glossary/#term-document) analogous to a rows in a SQL table.  And each document has [fields](http://docs.mongodb.org/manual/reference/glossary/#term-field) analogous to SQL columns.  Also, the docs have made a more comprehensive [comparison](http://docs.mongodb.org/manual/reference/sql-comparison/).
+<br>
 
-![mongo_diagram](http://assets.zipfianacademy.com/data/images/mongo_diagram.png)
+1. Use the follow snippet to start a Pymongo client and create a new collection (table) within a new database.   
+  
+   ```python
+   from pymongo import MongoClient
+   client = MongoClient()
+   # Initiate Database
+   db = client['test_database']
+   # Initiate Table
+   tab = db['test_table']
+   ```
+2. Insert an entry into the collection you have initiated. Check if the entry is inserted from the mongo shell.
+   Query the inserted entry from Pymongo.
 
-1. Try storing the document you retrieved earlier in MongoDB (be careful to not store duplicates!).  We will be using the [pymongo](http://api.mongodb.org/python/current/tutorial.html) library to interface to MongoDB from Python.
-2. Now see if you can query the database for the article you just stored.
-3. Now that you can store and retrieve articles in the Mongo Database, it is time to iterate!
+3. Try updating the entry you have inserted and verify that it has been updated.
 
+<br>
 
 ##Part 2: Practice CSS Selectors
 
@@ -45,7 +53,7 @@ walk through the work flow in the exercise below.
 
 4. Open up IPython in your terminal and import BeautifulSoup4 with the line `from bs4 import BeautifulSoup`.
    Read `data/ebay_shoes.html` in as one string from the file and put it into a `BeautifulSoup()` with the 
-   line `soup = BeautifulSoup(html_str)`. 
+   line `soup = BeautifulSoup(html_str, 'html.parser')`. 
 
    You should be able to use the CSS selector on the soup using `soup.select('your css selector')`. It will 
    then return a list of tags that each contains the source of the image location. Create a list of the paths to the    image locations by looping through the tags and accessing the image path by `tag['src']`.
@@ -61,54 +69,90 @@ walk through the work flow in the exercise below.
    
 7. Retrieve the product descriptions from your selected page by following the web scraping work flow.  
 
-##Part 2: Using a Web API 
+<br>
+
+##Part 3: Using a Web API to get meta data
 
 We do not always have to web scrape. Sometimes the web site provides an API to access the information. The API 
 is usually easier to use then constructing your own CSS selector. In the following exercise we will be using the NYT [API](http://developer.nytimes.com/docs/read/article_search_api_v2) to programmatically retrieve its articles.
 
 <br>
 
-1. Obtain an API key from the NYT for the Article Search API: [http://developer.nytimes.com/apps/register](http://developer.nytimes.com/apps/register)
-2. Now that we have access we can begin to have some fun!  Make a request to the article search API endpoint to retrieve the articles for last week.  
-    * Look for what [parameters](http://developer.nytimes.com/docs/read/article_search_api_v2) you can set in your request using the API
+1. Obtain an API key from the NYT for the Article Search API:    
+   [http://developer.nytimes.com/apps/register](http://developer.nytimes.com/apps/register)
+
+2. Now that we have access we can begin to have some fun!  Make a request to the article search API endpoint to  
+   retrieve the articles for last week.  
+    * Look for what [parameters](http://developer.nytimes.com/docs/read/article_search_api_v2) you can set in your        request using the API
     * Use [Requests](http://docs.python-requests.org/en/latest/) to interact with the API.
+
 3. Examine one of the articles returned.  Look at it's structure and the fields returned.  Make sure you can get a single article (and you know what it looks like) before you retrieve __ALL__ of the NYT.
-4. Now that you have some experience with the API and can sucessfully access articles with associated metadata, it is time to start storing them in [MongoDB](http://www.mongodb.org/)!
 
+4. Now that you have some experience with the API and can sucessfully access articles with associated metadata, it 
+   is time to start storing them in [MongoDB](http://www.mongodb.org/)!
 
-4. Now that you have a sense of what a single article response looks like, we can begin to scale up.  Begin downloading all of the NYT articles starting with the most recent.  You will not have time (or effort) to download all of the corpus, so let us start with the most recent articles and download as many as we can!  Store these in mongoDB.
-5.  Inspect how many articles were returned from your request for all of the NYT.  
+5. Now that you have a sense of what a single article response looks like, we can begin to scale up.  Begin  
+   downloading all of the NYT articles starting with the most recent.  You will not have time (or effort) to 
+   download all of the corpus, so let us start with the most recent articles and download as many as we can!  Store 
+   these in mongoDB.
+
+6.  Inspect how many articles were returned from your request for all of the NYT.  
     * How many documents are there?  
     * How many total articles are there in all of the NYT?  
-    * Look to the API docs for the Article Search API to learn about why there is a discrepancy between these two numbers (and how to find the second number -- total articles)
-6. The NYT does some things to prevent us from getting it's articles.  But we are clever data scientists (cleverer than the NYT API that is)!
+    * Look to the API docs for the Article Search API to learn about why there is a discrepancy between these two         numbers (and how to find the second number -- total articles)
+
+7. The NYT does some things to prevent us from getting it's articles.  But we are clever data scientists (cleverer     than the NYT API that is)!
     * Find out how to circumvent the API pagination.
     * The NYT is rate limited.  Deal with it.
-    * The API only lets you access a fixed number of pages (from the pagination).  What is this number and how can you get around this limit?
-7. Once you have figured how to deal with the NYT quirks, we are ready to start looping.  Begin to download the 10,000 most recent NYT articles.
-    * You will want to check how your loop is progressing, be sure to print some checkpoint information on how many documents it has downloaded (maybe every 100 articles?).  
+    * The API only lets you access a fixed number of pages (from the pagination).  What is this number and how can  
+      you get around this limit?
 
+8. Once you have figured how to deal with the NYT quirks, we are ready to start looping.  Begin to download the 
+   10,000 most recent NYT articles.
 
-* We have successful gathered article metadata from the NYT API
-* We have stored said data in MongoDB
-* We have URLs for each article that we can now use for scraping
+    * You will want to check how your loop is progressing, be sure to print some checkpoint information on how many 
+      documents it has downloaded (maybe every 100 articles?).  
 
-8. Do you remember James Cropcho of [Data Science Pyramid](https://github.com/zipfian/lectures/blob/master/whiteboards/data_science_pyramid.jpg) fame?  Well he coincidentally is also James Cropcho of [Variety](http://blog.mongodb.org/post/21923016898/meet-variety-a-schema-analyzer-for-mongodb) fame!  Use the Variety [library](https://github.com/variety/variety) to analyze the returned documents.
-    * How many have a headline?  What about a Headline kicker?
-    * How many have multimedia?
-    * What about a web URL? Do all of them?  I bet articles published before 1991 are less likely to have a web URL.
+<br>
 
+##Part 4: Scraping using the meta data
 
+**At this point:**
+- **We have successful gathered article metadata from the NYT API**
+- **We have stored said data in MongoDB**
+- **We have URLs for each article that we can now use for scraping**
 
-9. Now that we have all the meta data, it it time to get the article content!  We will be doing something I call a data join (some people call it [data blending](http://www.tableausoftware.com/videos/data-integration)... but they charge you money so they can call it that).
-    * Iterate over your collection in your database.  For all the articles for which you do not have HTML content (this will be all of them to begin with), use the 'web url' in the meta data to make a web request.
-    * Use Beautiful Soup to parse the returned HTML. Make sure to initialize your soup with: `BeautifulSoup(response.text, 'html.parser')`
-    * Augment your meta data in the database with this raw HTML from the web page.
-    * The web page has much more than just the article content.  Find out how to extract just the article body and store this in the database as well.
-    * Store __both__ the raw HTML and the article content in the database.
+<br>
 
+1. Now that we have all the meta data, it it time to get the article content!  We will be doing something 
+   I call a data join (some people call it [data blending](http://www.tableausoftware.com/videos/data-integration)... but they charge you money so they can call it that).
+    * Iterate over your collection in your database.  For all the articles for which you do not have HTML content 
+      (this will be all of them to begin with), use the 'web url' in the meta data to make a web request.
+    
+  
+    * Use Beautiful Soup to parse the returned HTML. Make sure to initialize `soup` with:   
+      `soup = BeautifulSoup(response.text, 'html.parser')`
+      
+    * Add a new field in the meta data records in your Mongo database to store the raw HTML from the web page.
+    
+    * Find the CSS selectors that would allow you to extract article text in the web pages. You can use the Chrome 
+      DevTools to help you find the relevant CSS Selectors. If you are having problems such as
+      `$ is not a function`. Use the following script to load in the jQuery library and then try again.
+  
+      ```js
+      var jq = document.createElement('script');
+      jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js";
+      document.getElementsByTagName('head')[0].appendChild(jq);
+      ```
+      
+    * Use `soup.select(Your CSS Selector)` to extract article text from the web pages.
+    
+    * Add a new field in the meta data records in your Mongo database to store the text of the articles.
+   
 
 You have made it to the end (hopefully succcessfully).  Now that you have your data and have contextualized it with information from the web, you can start performing some interesting analyses on it.
+
+<br>
 
 ## Extra Credit
 
