@@ -92,7 +92,7 @@ is usually easier to use then constructing your own CSS selector. In the followi
     if response.status_code != 200:
         print 'WARNING', response.status_code
     else:
-        return response.content
+        return response.json()
         
     link = 'http://api.nytimes.com/svc/search/v2/articlesearch.json'
     payload = {'api-key': '74c73309c1052e6aa1785df7cd5cef8c:9:69947183'}
