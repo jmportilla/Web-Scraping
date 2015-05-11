@@ -85,6 +85,19 @@ is usually easier to use then constructing your own CSS selector. In the followi
    retrieve the articles for last week.  
     * Look for what [parameters](http://developer.nytimes.com/docs/read/article_search_api_v2) you can set in your        request using the API
     * Use [Requests](http://docs.python-requests.org/en/latest/) to interact with the API.
+    * 
+    ```python
+    def single_query(link, payload):
+    response = requests.get(link, params=payload)
+    if response.status_code != 200:
+        print 'WARNING', response.status_code
+    else:
+        return response.content
+        
+    link = 'http://api.nytimes.com/svc/search/v2/articlesearch.json'
+    payload = {'api-key': '74c73309c1052e6aa1785df7cd5cef8c:9:69947183'}
+    html_str = single_query(link, payload)
+    ```
 
 3. Examine one of the articles returned.  Look at it's structure and the fields returned.  Make sure you can get a single article (and you know what it looks like) before you retrieve __ALL__ of the NYT.
 
