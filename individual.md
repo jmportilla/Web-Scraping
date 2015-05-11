@@ -48,7 +48,7 @@ Paste and run the queries in the Mongo shell.
 7. Use `distinct()` to find all the distinct types of web browsers (under the field `a`) people use to
    visit the sites. Count the the number distinct web browsers (use `.length` of your distinct list)
 
-8. Select and count the records where the users has visited a website either from a `Mozilla/5.0` or an `Opera` web     browser. Search the `a` field using 
+8. Select and count the records where the users has visited a website either from a `Mozilla` or an `Opera` web     browser. Search the `a` field using 
    [regex in mongo](http://stackoverflow.com/questions/3305561/how-to-query-mongodb-with-like).
 
 9. Find the type of the `t` (timestamp) field. You can access the type of a field in an entry by
