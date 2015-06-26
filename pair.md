@@ -175,10 +175,8 @@ Scraping sites is easy when you can have clear access to the content and it is i
 
 1. Find a site that you might want to get data from that requires a login.
 
-* Use [Mechanize](http://wwwsearch.sourceforge.net/mechanize/) to login to a site to scrape.
-* [Mechanize For Beginners](http://www.pythonforbeginners.com/mechanize/browsing-in-python-with-mechanize/)
-* [Mechanize Login Tutorial](http://simplapi.wordpress.com/2012/04/20/pythons-mechanize-login-like-a-user/)
-* Example code in [advanced_scraping.ipynb](advanced_scraping.ipynb)
+* Use a [requests session](http://docs.python-requests.org/en/latest/user/advanced/) to login to a site to scrape.
+* Example code in [web_scraping.ipynb](web_scraping.ipynb)
 
 ### Client side templating
 
